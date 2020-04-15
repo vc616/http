@@ -1,6 +1,6 @@
 <?php
 
-$dbname = "dtro";
+$dbname = "dt";
 $servername = "localhost";
 $username = "php";
 $password = "111111";

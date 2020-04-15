@@ -13,11 +13,11 @@
             color:black;
         }
         .box{
-            width:1060px;
-            height:720px;
+            width:1070px;
+            height:780px;
             border:1px solid #f90;
-            border-radius:5px;
-            margin:5px auto;
+            border-radius:1px;
+            margin:1px;
         }
         h3{
             text-align:center;
@@ -108,10 +108,10 @@
 <script>
     var lis=document.querySelectorAll("#example1 li");
     var len=lis.length;
-	lis[0].style.background="white";
-    lis[0].querySelector("a").style.color="black";
-	lis[1].style.background="#f90";
-    lis[1].querySelector("a").style.color="white";	
+	lis[0].style.background="#f90";
+    lis[0].querySelector("a").style.color="white";
+	lis[1].style.background="white";
+    lis[1].querySelector("a").style.color="black";	
 //切换页签样式：遍历li，给li绑定onclick事件
     for(var i=0;i<len;i++){
         lis[i].onclick=function(){

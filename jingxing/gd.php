@@ -1,6 +1,6 @@
 <?php
 
-$dbname = "dtro";
+$dbname = "dt";
 $servername = "localhost";
 $username = "php";
 $password = "111111";
@@ -39,7 +39,7 @@ $result_1 =  mysqli_query($conn, $sql_1);
 //////////////////////////////////////////////////
 
 
-$sql_2 = "SELECT * FROM dtro.runtime WHERE ID = '". $project."'";
+$sql_2 = "SELECT * FROM " . $project;
 //echo $sql_2;
 
 $result_2 = mysqli_query($conn, $sql_2);
