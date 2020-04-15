@@ -1,0 +1,244 @@
+<!-- This is a very basic sample file that lists all the hosted FileMaker WebDirect solutions. 
+You can customize this page and provide a custom home page for your FileMaker WebDirect users. 
+
+If you include a custom external js file, it has to be included after the default fmwebd_home.js file
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="fmwebd_home.js"></script>
+	<title>FileMaker WebDirect Custom Home Page</title>
+	<style>
+	.login {
+	    display: none; /* Hidden by default */
+	    position: fixed;
+	    z-index: 1;
+	    padding-top: 100px;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    overflow: hidden;
+	    background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	.login * {
+		font-size: 14px;
+	}
+
+	.login-content {
+	    background-color: #fefefe;
+	    margin: auto;
+	    padding: 10px 20px;
+	    border: 1px solid #888;
+	    width: 400px;
+	}
+
+	input[type=text], input[type=password] {
+	    width: 100%;
+	    padding: 12px;
+	    margin: 8px 0;
+	    display: inline-block;
+	    border: 1px solid #ccc;
+	    box-sizing: border-box;
+	}
+
+	button {
+	    padding: 14px 20px;
+	    margin: 8px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: 100%;
+	}
+
+	#message,
+	#error {
+		margin: 20px 0;
+		font-size: 18px;
+	}
+
+	#error {
+		display: none;
+		color: #f00;
+	}
+	</style>
+	<script>
+	
+	// To enable/disable custom login UI
+	var kCustomLogin = false;
+
+	function init() {
+		// IMPORTANT - onLoadBegin has to be called at the end of your body's onload function
+		// Failing to call this function will make your custom home page unusable
+		onLoadEnter();
+		
+		var useCachedDbFilter = false;
+
+		// OPTIONAL - custom login
+		// This page may get redirected back if previous login failed
+		// Get the error code so you can display customized message
+		if (kCustomLogin == true) {
+			var loginErrorCode = getLoginErrorCode();
+
+			if (loginErrorCode != null) {
+				// DB name from the last login error
+				var	dbName = getDatabaseNameFromLoginError();
+
+				if (dbName != null) {
+					// Keep the db name in an attribute, so you can use it for the next login attempt
+					document.getElementById('myLogin').setAttribute('db', dbName);
+
+					document.getElementById('message').innerHTML = 'Sign in to open "' + dbName + '"';
+
+					if (loginErrorCode != 0) {
+						showErrorMsg('Error: ' + loginErrorCode);
+					}
+
+					showLogin(true);
+					
+					var dbFilter = sessionStorage.getItem('db_filter');
+					if (dbFilter) {
+						useCachedDbFilter = true;
+						generateContent(dbFilter);
+					}
+				}
+			}
+		}
+		
+		// Get the database names
+		if (!useCachedDbFilter) {
+			loadXMLDoc();
+		}
+		
+		// IMPORTANT - onLoadEnd has to be called at the end of your body's onload function
+		// Failing to call this function will make your custom home page unusable
+		onLoadExit();
+	}
+
+	function loadXMLDoc(user, pwd)
+	{
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+	  	{
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+	  		xmlhttp = new XMLHttpRequest();
+	  	} else {
+			// code for IE6, IE5
+			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4) {
+				if (xmlhttp.status == 200) {
+			    	sessionStorage.setItem('db_filter', xmlhttp.responseText)
+			    	generateContent(xmlhttp.responseText);
+	    		} else if (xmlhttp.status == 401) {
+	    			sessionStorage.removeItem('db_filter');
+	    			showFilterLogin(true);
+	    		}
+	    	}
+		}
+		
+		// Change webdUrl to point to IP address of your Web Publishing engine
+		// Default URL is prefined in fmwebd_home.js
+		var url = webdUrl + 'dbnames?customfilterlogin=1';
+		
+		if (kCustomLogin) {
+			url += '&homelogin=1';
+		}
+		
+		xmlhttp.open('GET', url, true);
+		if (user) {
+			xmlhttp.setRequestHeader('Authorization', 'Basic ' + btoa(user + ':' + pwd));
+		}
+		xmlhttp.send();
+	}
+
+	function generateContent(jsonStr) {
+		document.getElementById('myHeader').innerHTML = '<h2>FileMaker WebDirect Database Home Page Sample</h2>';
+
+		var dbList = "", obj = []; 
+		obj = JSON.parse(jsonStr);  // convert json string into object
+
+		//iterate through and print out links to each of the databases
+		for (var prop in obj) {
+			var name = prop;
+			var url = obj[prop];
+
+			dbList += ('<a href=' + url + '>' + name + '</a> </br>');
+		}
+
+		document.getElementById('myList').innerHTML = dbList;
+	}
+
+	function showLogin(show) {
+		document.getElementById('myLogin').style.display = show ? 'block' : 'none';
+	}
+
+	function showErrorMsg(errMsg) {
+		document.getElementById('error').innerHTML = errMsg;
+		document.getElementById('error').style.display = 'block';
+	}
+
+	function doLogin() {
+		var dbName = document.getElementById('myLogin').getAttribute('db');
+		var user = document.getElementById('user').value;
+		var pwd = document.getElementById('pwd').value;
+
+		openDatabase(dbName, user, pwd, false /*guest*/, kCustomLogin);
+	}
+	
+	function showFilterLogin(show) {
+		document.getElementById('filterLogin').style.display = show ? 'block' : 'none';
+	}
+
+	function doFilterLogin() {
+		var user = document.getElementById('filterUser').value;
+		var pwd = document.getElementById('filterPwd').value;
+		showFilterLogin(false);
+		loadXMLDoc(user, pwd);
+	}
+
+	</script>
+</head>
+
+<body onload="init()">
+
+<div id="myHeader"></div>
+<div id="myList"></div>
+
+<!-- OPTIONAL - custom login -->
+<!-- 
+<div id="myLogin" class="login" db="">
+	<div class="login-content">
+		<div id="message">Sign in to open</div>
+		<div id="error">Error goes here...</div>
+		<div class="container">
+		    <input type="text" placeholder="User Name" id="user" required>
+			<input type="password" placeholder="Password" id="pwd">
+	    	<button type="button" onClick="doLogin()">Log In</button>
+			<button type="button" onClick="showLogin(false)">Cancel</button>
+	 	</div>
+  	</div>
+</div>
+ -->
+<!-- END OF custom login -->
+
+<div id="filterLogin" class="login">
+	<div class="login-content">
+		<div id="message">Sign in to view databases hosted by FileMaker Server.</div>
+		<div class="container">
+		    <input type="text" placeholder="Account Name" id="filterUser" required>
+			<input type="password" placeholder="Password" id="filterPwd">
+	    	<button type="button" onClick="doFilterLogin()">Sign In</button>
+	 	</div>
+  	</div>
+</div>
+
+</body>
+</html>
+
+
+

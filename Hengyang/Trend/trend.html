@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="../../js/echarts.min.js"></script>
+    <script type="text/javascript" src="../../js/jedate.js"></script>
+ <style> 
+.box {
+    display: -webkit-flex;
+    display: flex;
+    width: 1050px;
+    height:708px;
+    
+}
+
+.column_left {
+    background-color: #CCFFCC;
+    width: 760px;
+    height: 680px;
+    margin: 3px;
+}
+.column_right {
+    font-size:120%;
+    background-color: #CCFFCC;
+    width: 300px;
+    height: 680px;
+    margin: 3px;
+}
+</style>
+	
+</head>
+<body>
+<script>
+
+function validateForm(){
+
+       var arr = new Array();                
+        var items = document.getElementsByName("v[]");                 
+        for (i = 0; i < items.length; i++) {                    
+            if (items[i].checked) {                        
+                arr.push(items[i].value);                    
+            }                
+        }  
+		
+	     if(arr.length == 0){
+		alert("您未选择任何归档数据!");
+		//alert("您未选择任何需要显示的数据！")；
+		return false;
+		}   
+		
+		
+
+  
+}
+</script>
+
+
+
+
+<div class = "box">
+    <div class="column_left"   id="main" >
+	</div>
+  <div class="column_right"   id="form_right" > 
+  请选择需要查看的数据：
+<form action="GetNewTrend.php" onsubmit="return validateForm();" method="post"style = "font-size: 110%">
+<input type="checkbox" name="v[]" value="NI13021">NI13021
+<input type="checkbox" name="v[]" value="TI13021">TI13021<br>
+<input type="checkbox" name="v[]" value="NI17021">NI17021
+<input type="checkbox" name="v[]" value="NI18021">NI18021<br>
+<input type="checkbox" name="v[]" value="NI27021">NI27021
+<input type="checkbox" name="v[]" value="NI28021">NI28021<br>
+<input type="checkbox" name="v[]" value="FI18021">FI18021
+<input type="checkbox" name="v[]" value="FI28021">FI28021<br>
+<input type="checkbox" name="v[]" value="PI13021">PI13021
+<input type="checkbox" name="v[]" value="PI14021">PI14021<br>
+<input type="checkbox" name="v[]" value="PI15021">PI15021
+<input type="checkbox" name="v[]" value="PI16021">PI16021<br>
+<input type="checkbox" name="v[]" value="PI16121">PI16121
+<input type="checkbox" name="v[]" value="PI16221">PI16221<br>
+<input type="checkbox" name="v[]" value="PI16321">PI16321
+<input type="checkbox" name="v[]" value="PI16421">PI16421<br>
+<input type="checkbox" name="v[]" value="PI18021">PI18021
+<input type="checkbox" name="v[]" value="PI26021">PI26021<br>
+<input type="checkbox" name="v[]" value="YI17021">YI17021
+<input type="checkbox" name="v[]" value="LI11021">LI11021<br>
+<input type="checkbox" name="v[]" value="YI02221_tank">YI02221_tank<br>
+<input type="checkbox" name="v[]" value="YI02321_tank">YI02321_tank<br>
+<input type="checkbox" name="v[]" value="YI09721_tank">YI09721_tank<br>
+<input type="checkbox" name="v[]" value="NI02321_tank">NI02321_tank<br>
+<input type="checkbox" name="v[]" value="LI02211_tank">LI02211_tank<br>
+<input type="checkbox" name="v[]" value="LI09711_tank">LI09711_tank<br>
+开始时间：<input class="datainp" name="Start_Time" id="dateinfo" type="text" placeholder="请选择" value = "<?php echo date('Y-m-d H:i:s', time()-86400);?>" readonly><br>
+持续:<input type="number" name="durations1" min="0" max="9999" value=24 style = "height:25px; width:40px;font-size: 100%">小时
+<input type="number" name="durations2" min="0" max="59"  value=0 style = "height:25px; width:40px;font-size: 100%">分<br>
+<input type="reset" value="重 置"style = "height:40px; width:80px;font-size: 100%;left:200px;margin:5px 60px;"><br>
+<input type="submit" value="确 定"style = "height:40px; width:80px;font-size: 100%;left:200px;margin:5px 60px;"><br>
+</form> 
+</div>
+</div>
+
+ 
+      <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <!-- class="column_half left_half"   <div id="main" style="width: 1000px;height:700px;"></div> -->
+<script type="text/javascript">
+    jeDate({
+		dateCell:"#dateinfo",
+		format:"YYYY-MM-DD hh:mm:ss",
+		isinitVal:true,
+		isTime:true, //isClear:false,
+		minDate:"2018-12-01 00:00:00",
+		//zIndex:999
+		okfun:function(val){alert(val)}
+	})
+</script>
+
+  
+
+<script type="text/javascript">
+//
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        var option = {
+		title: {
+        text: '历史数据归档'
+    },
+	 tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:[<?php echo $s1; ?>]
+    },
+	    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+		
+    xAxis: {
+        type: 'category',
+        data: <?php echo json_encode($obj[0]); ?>,
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [<?php echo $st;?>
+	]
+	
+	
+};
+window.onload = myChart.resize;
+window.onresize = myChart.resize;
+myChart.setOption(option);
+ </script>
+
+ 
+
+</body>
+</html>

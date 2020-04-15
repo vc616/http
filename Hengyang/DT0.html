@@ -1,0 +1,386 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<title>ajax测试程序</title> 
+<script>
+function showSite()
+{
+    if (window.XMLHttpRequest)
+    {
+        // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            var obj = JSON.parse(xmlhttp.responseText); 
+			var key=[];
+			var value=[];
+			
+			for(var p in obj)
+			{
+			key.push(p);
+            value.push(obj[p]);
+            }
+		//	document.getElementById("demo1").innerHTML=key;
+		//	document.getElementById("demo2").innerHTML=value;
+		
+		
+		
+		
+		
+        for (var i in key)
+			{
+			if(value[i]=='1')
+			    {
+			    try
+				   {
+			        var text = document.getElementById(key[i]);
+                    console.log( text.textContent ); // foo
+                    text.style.display = '';
+			        }
+			    catch(err)
+				    {}
+			    }
+				if(value[i]=="0")
+			    {
+			    try
+				   {
+			        var text = document.getElementById(key[i]);
+                    console.log( text.textContent ); // foo
+                    text.style.display = 'none';
+			        }
+			    catch(err)
+				    {}
+			    }
+			
+			else
+			    {
+			    try
+				   {
+			        var text = document.getElementById(key[i]);
+                    console.log( text.textContent ); // foo
+                    text.textContent = value[i];
+			        }
+			    catch(err)
+				    {}
+			
+			    }
+			}
+			    	
+			
+		}
+    }
+    xmlhttp.open("GET","getsite_mysql.php",true);
+    xmlhttp.send();
+}
+</script>
+
+
+
+</head>
+<body>
+
+ <script>
+showSite()
+</script> 
+
+
+<svg version="1.1" xmlns="" xmlns:xlink="" style="background-color:#FFFFFF" id="main" viewBox="0.000000 0.000000 1040.000000 650.000000" width="1040.000000" height="650.000000">
+<script type="text/javascript" xlink:href="vg.js"/>
+<defs>
+<linearGradient x1="0.000000%" y1="0.000000%" x2="100.000000%" y2="0.000000%" id="gradient-1">
+<stop offset="0" stop-color="#808080" stop-opacity="1.000000"/>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="1.000000"/>
+<stop offset="1" stop-color="#808080" stop-opacity="1.000000"/>
+</linearGradient>
+<linearGradient x1="0.000000%" y1="0.000000%" x2="100.000000%" y2="0.000000%" id="gradient-2">
+<stop offset="0" stop-color="#808080" stop-opacity="1.000000"/>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="1.000000"/>
+<stop offset="1" stop-color="#808080" stop-opacity="1.000000"/>
+</linearGradient>
+<linearGradient x1="0.000000%" y1="0.000000%" x2="100.000000%" y2="0.000000%" id="gradient-3">
+<stop offset="0" stop-color="#808080" stop-opacity="1.000000"/>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="1.000000"/>
+<stop offset="1" stop-color="#808080" stop-opacity="1.000000"/>
+</linearGradient>
+<linearGradient x1="0.000000%" y1="0.000000%" x2="100.000000%" y2="0.000000%" id="gradient-4">
+<stop offset="0" stop-color="#808080" stop-opacity="1.000000"/>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="1.000000"/>
+<stop offset="1" stop-color="#808080" stop-opacity="1.000000"/>
+</linearGradient>
+<linearGradient x1="0.000000%" y1="0.000000%" x2="100.000000%" y2="0.000000%" id="gradient-5">
+<stop offset="0" stop-color="#808080" stop-opacity="1.000000"/>
+<stop offset="0.5" stop-color="#FFFFFF" stop-opacity="1.000000"/>
+<stop offset="1" stop-color="#808080" stop-opacity="1.000000"/>
+</linearGradient>
+</defs>
+<ellipse id="PK02411_Fault" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#FF0000" stroke="#000000" transform="translate(234.621761,95.903047) "/>
+<ellipse id="PK09711_Fault" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#FF0000" stroke="#000000" transform="translate(679.935905,589.265328) "/>
+<ellipse id="PK02211_Fault" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#FF0000" stroke="#000000" transform="translate(684.129856,301.317825) "/>
+<ellipse id="LR09311_Fault" cx="-7.97251" cy="-7.54063" rx="19.7826" ry="21.0917" fill="#FF0000" stroke="#000000" transform="translate(579.189930,442.540485) "/>
+<line id="line16" x1="-411.033" y1="53.7944" x2="17.3483" y2="53.7944" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1017.031869,528.847326) "/>
+<line id="line41" x1="-8.15721" y1="-0.424009" x2="8.15721" y2="-0.424009" fill="none" stroke="#000000" stroke-width="3" transform="translate(639.725444,218.934186) "/>
+<line id="line38" x1="-356.122" y1="50.4367" x2="-259.609" y2="50.4367" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1219.953696,-5.174665) "/>
+<line id="line39" x1="-388.293" y1="50.4367" x2="-388.293" y2="204.498" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1348.637632,-5.174665) "/>
+<line id="line40" x1="-374.747" y1="43.1004" x2="-374.747" y2="131.135" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1238.579004,2.161576) "/>
+<line id="line37" x1="-188.387" y1="-4.65569" x2="-32.611" y2="-4.65569" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(368.161676,93.935143) "/>
+<line id="line15" x1="-224.482" y1="-57.3356" x2="-224.482" y2="56.8841" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(830.215904,500.532254) "/>
+<line id="line3" x1="-388.293" y1="50.4367" x2="-260.846" y2="51.3537" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1018.813412,243.340535) "/>
+<line id="line21" x1="-222.593" y1="-31.1508" x2="-224.482" y2="109.127" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(855.001888,184.650599) "/>
+<line id="line43" x1="-188.387" y1="-4.65569" x2="269.627" y2="-5.75613" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(526.476781,73.026854) "/>
+<line id="line1" x1="-315.901" y1="-0.225731" x2="-315.901" y2="60.1595" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1112.005068,67.496456) "/>
+<rect id="rect4" x="-69.3877" y="-97.3501" width="135.457" height="110.044" fill="#999999" fill-rule="evenodd" stroke="#000000" transform="translate(113.706295,120.603165) "/>
+<ellipse id="circle1" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(234.621761,95.903047) "/>
+<ellipse id="circle2" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(968.628155,138.086439) "/>
+<ellipse id="circle3" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(684.129856,301.317825) "/>
+<line id="line2" x1="-456.242" y1="3.38596" x2="339.371" y2="3.38596" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(502.449584,151.919673) "/>
+<rect id="rect5" x="-74.4934" y="-97.3501" width="184.951" height="146.725" fill="#999999" fill-rule="evenodd" stroke="#000000" transform="translate(498.090941,566.279871) "/>
+<g id="element6" transform="translate(942.489002,207.223298) ">
+<path id="line6" d="M-44.019362,-51.320651 C-44.019362,-74.969229 43.712607,-74.347240 43.712607,-52.318428 L44.027543,52.642379 C44.027543,71.755613 -44.019362,71.431660 -44.019362,52.642379 L-44.019362,-51.346568 " fill="url(#gradient-1)" stroke="#000000" transform="translate(21.238284,23.051561) "/>
+<line id="line7" x1="-43.866" y1="-0.356348" x2="43.866" y2="0.356348" fill="none" stroke="#000000" transform="translate(21.084907,-29.623215) "/>
+<line id="line8" x1="-43.866" y1="-0.356348" x2="43.866" y2="0.356348" fill="none" stroke="#000000" transform="translate(21.084907,-24.439965) "/>
+</g>
+<line id="line4" x1="-313.4" y1="1.58012" x2="-12.0094" y2="1.58012" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(406.822312,520.537622) "/>
+<line id="line5" x1="-314.651" y1="1.58012" x2="644.565" y2="-0.253948" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(381.814908,628.747192) "/>
+<line id="line6" x1="-313.4" y1="1.58012" x2="673.741" y2="-0.253947" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(352.639603,643.419676) "/>
+<line id="line7" x1="-222.593" y1="-31.1508" x2="-223.856" y2="55.0782" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(268.799674,186.456442) "/>
+<line id="line8" x1="-222.593" y1="-31.1508" x2="-223.856" y2="135.749" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(263.094860,509.251094) "/>
+<line id="line9" x1="-222.593" y1="-31.1508" x2="-220.73" y2="121.076" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(287.893870,509.251094) "/>
+<line id="line10" x1="-222.593" y1="-31.1508" x2="-222.814" y2="12.8667" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(316.235594,509.251094) "/>
+<line id="line11" x1="-224.482" y1="-29.3167" x2="-226.175" y2="56.8841" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(620.987287,465.233642) "/>
+<line id="line12" x1="-388.293" y1="61.441" x2="-291.18" y2="61.441" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(784.798810,374.475862) "/>
+<rect id="rect2" x="-69.3877" y="-53.3325" width="40.637" height="66.0262" fill="#999999" fill-rule="evenodd" stroke="#000000" transform="translate(563.005995,456.236240) "/>
+<rect id="rect6" x="-69.3877" y="-23.9875" width="20.3185" height="36.6812" fill="#999999" fill-rule="evenodd" stroke="#000000" transform="translate(572.800561,390.210062) "/>
+<line id="line13" x1="-395.795" y1="61.441" x2="-295.557" y2="61.441" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1001.529649,381.755672) "/>
+<line id="line14" x1="-222.593" y1="-31.1508" x2="-222.593" y2="49.5479" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1033.700632,417.463420) "/>
+<ellipse id="circle8" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(818.805149,422.563334) "/>
+<g id="element5" transform="translate(790.855564,490.599757) ">
+<path id="line6" d="M-44.019362,-46.188586 C-44.019362,-67.472305 43.712606,-66.912514 43.712606,-47.086584 L44.027541,47.378142 C44.027541,64.580053 -44.019362,64.288494 -44.019362,47.378142 L-44.019362,-46.211910 " fill="url(#gradient-2)" stroke="#000000" transform="translate(21.238285,15.554637) "/>
+<line id="line7" x1="-43.866" y1="-0.320714" x2="43.866" y2="0.320713" fill="none" stroke="#000000" transform="translate(21.084906,-31.852660) "/>
+<line id="line8" x1="-43.866" y1="-0.320713" x2="43.866" y2="0.320713" fill="none" stroke="#000000" transform="translate(21.084906,-27.187736) "/>
+</g>
+<g id="element1" transform="translate(1118.315559,384.388967) ">
+<polygon id="line2" points="-6.153579,-11.410626 -6.153579,-34.231877 16.922341,-21.640841" fill="#999999" stroke="#000000" transform="translate(-187.491776,219.188921) "/>
+<polygon id="line1" points="6.153579,-11.410626 6.153579,-34.231876 -16.922340,-21.640841" fill="#999999" stroke="#000000" transform="translate(-153.499562,219.171638) "/>
+<path id="line3" d="M-18.452609,6.221746 C-16.554186,-3.825838 -8.724921,-11.004075 0.335502,-11.004075 9.395925,-11.004075 17.225191,-3.825838 19.123613,6.221746 " fill="#999999" stroke="#000000" transform="translate(-170.831123,172.970659) "/>
+<rect id="rect3" x="-1.0065" y="-5.89778" width="2.01301" height="18.2641" fill="#999999" stroke="#000000" transform="translate(-170.495621,185.203269) "/>
+<line id="line4" x1="-19.9579" y1="0" x2="17.4894" y2="0" fill="none" stroke="#000000" transform="translate(-169.180880,179.215249) "/>
+</g>
+<text id="text2" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(946.588386,604.519110) ">
+VA09711</text>
+<ellipse id="circle7" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(679.961955,589.660355) "/>
+<line id="line17" x1="-388.293" y1="57.2509" x2="-349.231" y2="57.2509" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(920.255584,378.143984) "/>
+<ellipse id="circle9" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(579.307152,442.935514) "/>
+<line id="line18" x1="-313.4" y1="1.58012" x2="231.813" y2="1.58012" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(371.264910,168.398001) "/>
+<line id="line19" x1="-221.095" y1="-31.1508" x2="-221.095" y2="146.753" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(824.172447,201.128927) "/>
+<line id="line20" x1="-402.567" y1="68.7773" x2="-280.97" y2="68.7773" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1009.031869,279.104715) "/>
+<line id="line22" x1="-224.482" y1="-115.969" x2="-222.605" y2="117.267" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(952.543790,463.851043) "/>
+<line id="line23" x1="-224.482" y1="-57.3356" x2="-223.023" y2="80.5858" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(930.453917,500.532254) "/>
+<line id="line24" x1="-456.75" y1="54.1048" x2="-292.743" y2="52.1861" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1103.851612,334.126531) "/>
+<line id="line25" x1="-217.709" y1="-49.9993" x2="-217.709" y2="4.96608" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(864.809479,438.230628) "/>
+<line id="line26" x1="-223.856" y1="-31.1508" x2="-223.856" y2="55.0782" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(281.720166,201.128927) "/>
+<line id="line27" x1="-313.4" y1="1.58012" x2="51.499" y2="1.58012" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(384.810587,183.070485) "/>
+<line id="line28" x1="-313.4" y1="1.58012" x2="-83.1242" y2="1.58012" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(398.356264,197.742970) "/>
+<line id="line29" x1="-313.4" y1="1.58012" x2="-225.354" y2="1.58012" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(411.901942,212.415454) "/>
+<line id="line30" x1="-224.69" y1="-31.1508" x2="-223.856" y2="115.574" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(660.999133,215.801411) "/>
+<line id="line31" x1="-224.69" y1="-31.1508" x2="-223.856" y2="55.0782" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(539.921616,230.473895) "/>
+<line id="line32" x1="-217.917" y1="-31.1508" x2="-217.917" y2="56.8841" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(404.464843,245.146380) "/>
+<line id="line33" x1="-223.856" y1="-31.1508" x2="-223.856" y2="55.0782" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(295.265843,215.801411) "/>
+<line id="line34" x1="-223.856" y1="-31.1508" x2="-223.856" y2="55.0782" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(308.811520,230.473895) "/>
+<line id="line35" x1="-223.856" y1="-31.1508" x2="-223.856" y2="55.0782" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(322.357198,245.146380) "/>
+<g id="element2" transform="translate(167.441812,324.433874) ">
+<path id="line6" d="M-44.019362,-46.188587 C-44.019362,-67.472306 43.712605,-66.912514 43.712605,-47.086584 L44.027540,47.378141 C44.027540,64.580052 -44.019362,64.288495 -44.019362,47.378141 L-44.019362,-46.211912 " fill="url(#gradient-3)" stroke="#000000" transform="translate(21.238284,15.554637) "/>
+<line id="line7" x1="-43.866" y1="-0.320714" x2="43.866" y2="0.320714" fill="none" stroke="#000000" transform="translate(21.084905,-31.852661) "/>
+<line id="line8" x1="-43.866" y1="-0.320714" x2="43.866" y2="0.320714" fill="none" stroke="#000000" transform="translate(21.084905,-27.187736) "/>
+</g>
+<ellipse id="circle4" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(194.688062,261.137792) "/>
+<ellipse id="circle5" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(325.065207,261.137792) "/>
+<ellipse id="circle6" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#999999" stroke="#000000" transform="translate(446.246921,261.137792) "/>
+<g id="element3" transform="translate(295.083771,324.433874) ">
+<path id="line6" d="M-44.019362,-46.188586 C-44.019362,-67.472306 43.712607,-66.912514 43.712607,-47.086584 L44.027541,47.378141 C44.027541,64.580052 -44.019362,64.288495 -44.019362,47.378141 L-44.019362,-46.211911 " fill="url(#gradient-4)" stroke="#000000" transform="translate(21.238284,15.554637) "/>
+<line id="line7" x1="-43.866" y1="-0.320713" x2="43.866" y2="0.320714" fill="none" stroke="#000000" transform="translate(21.084907,-31.852661) "/>
+<line id="line8" x1="-43.866" y1="-0.320713" x2="43.866" y2="0.320714" fill="none" stroke="#000000" transform="translate(21.084907,-27.187736) "/>
+</g>
+<g id="element4" transform="translate(417.046966,324.433874) ">
+<path id="line6" d="M-44.019363,-46.188586 C-44.019363,-67.472306 43.712606,-66.912514 43.712606,-47.086584 L44.027541,47.378141 C44.027541,64.580052 -44.019363,64.288495 -44.019363,47.378141 L-44.019363,-46.211911 " fill="url(#gradient-5)" stroke="#000000" transform="translate(21.238285,15.554637) "/>
+<line id="line7" x1="-43.866" y1="-0.320713" x2="43.866" y2="0.320714" fill="none" stroke="#000000" transform="translate(21.084907,-31.852661) "/>
+<line id="line8" x1="-43.866" y1="-0.320713" x2="43.866" y2="0.320714" fill="none" stroke="#000000" transform="translate(21.084907,-27.187736) "/>
+</g>
+<rect id="rect3" x="-69.3877" y="-97.3501" width="88.0469" height="249.432" fill="#CCCCCC" fill-rule="evenodd" stroke="#000000" transform="translate(93.387779,326.017943) "/>
+<rect id="rect7" x="-13.5457" y="-29.345" width="27.0914" height="58.6899" fill="#999999" stroke="#000000" transform="translate(324.544725,89.279451) "/>
+<rect id="rect8" x="-7.2808" y="-20.2205" width="14.5616" height="40.441" fill="none" stroke="#000000" transform="translate(324.544725,88.729233) "/>
+<line id="line36" x1="-13.5457" y1="-0.137555" x2="13.5457" y2="-0.137555" fill="none" stroke="#000000" transform="translate(324.544725,68.508716) "/>
+<text id="text14" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(228.385262,125.373333) ">
+PK02411</text>
+<text id="text1" x="-33.646" y="6" font-family="SimSun" font-size="22" text-anchor="start" transform="translate(115.521898,116.786000) ">
+调节池</text>
+<text id="text3" x="-33.6621" y="6" font-family="SimSun" font-size="22" text-anchor="start" transform="translate(114.072016,64.340610) ">
+B02411</text>
+<text id="text4" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(444.502520,48.508730) ">
+FS02321</text>
+<ellipse id="circle10" cx="-1.69321" cy="-1.83406" rx="5.07963" ry="5.50218" fill="#000000" stroke="#000000" transform="translate(443.913496,69.531409) "/>
+<text id="text5" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(521.003746,26.500004) ">
+FI02321</text>
+<rect id="rect9" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(520.098454,49.847150) "/>
+<text id="FI02321_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(523.866934,51.508730) ">
+FI02321</text>
+<text id="text6" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(698.802749,26.500004) ">
+YI02321</text>
+<rect id="rect10" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(697.897458,49.847150) "/>
+<text id="YI02321_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(699.665937,52.508730) ">
+YI02321</text>
+<text id="text9" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(244.857173,250.258746) ">
+PD00411</text>
+<text id="text10" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(375.234318,250.258746) ">
+PC01211</text>
+<text id="text11" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(496.298810,250.258746) ">
+PC01311</text>
+<text id="text12" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(580.959294,398.648351) ">
+LR09311</text>
+<text id="text13" x="-27.8013" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(187.614147,364.125358) ">
+阻垢剂</text>
+<text id="text15" x="-13.9014" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(316.047978,364.294656) ">
+A液</text>
+<text id="text16" x="-13.9014" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(439.652285,364.294656) ">
+C液</text>
+<text id="text17" x="-27.8013" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(516.899961,596.726887) ">
+清水罐</text>
+<text id="text18" x="-27.8145" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(516.214126,507.774952) ">
+B09711</text>
+<text id="text19" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(868.804938,413.320835) ">
+PD00211</text>
+<text id="text20" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(671.546012,613.233432) ">
+PK09711</text>
+<text id="text21" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(674.615152,323.451870) ">
+PK02211</text>
+<text id="text22" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(909.311808,90.966225) ">
+PD00111</text>
+<text id="text23" x="-18.5332" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(964.872203,266.595993) ">
+酸罐</text>
+<rect id="rect11" x="-89.7062" y="-97.3501" width="139.729" height="198.079" fill="#999999" fill-rule="evenodd" stroke="#000000" transform="translate(847.673615,215.974311) "/>
+<text id="text24" x="-27.8013" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(827.751469,292.272840) ">
+原水罐</text>
+<text id="text25" x="-27.8145" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(824.378286,145.547999) ">
+B02211</text>
+<text id="text26" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(680.349665,193.233572) ">
+YI02221</text>
+<rect id="rect12" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(680.444373,218.580718) "/>
+<text id="YI02221_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(681.212853,220.242298) ">
+YI02221</text>
+<text id="text28" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(680.207430,242.612125) ">
+FS02221</text>
+<ellipse id="circle11" cx="-1.69321" cy="-1.83406" rx="5.07963" ry="5.50218" fill="#000000" stroke="#000000" transform="translate(633.034502,243.340535) "/>
+<line id="line42" x1="-8.15721" y1="-0.424008" x2="8.15721" y2="-0.424008" fill="none" stroke="#000000" stroke-width="3" transform="translate(699.281825,513.794685) "/>
+<text id="text29" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(663.320868,488.094072) ">
+YI09721</text>
+<rect id="rect13" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(663.415576,513.441217) "/>
+<text id="YI09721_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(664.184057,514.102798) ">
+YI02221</text>
+<text id="text31" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(572.765727,529.854219) ">
+LI09711</text>
+<rect id="rect14" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(569.758216,555.201364) "/>
+<text id="LI09711_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(572.526695,556.862945) ">
+LI09711</text>
+<text id="text33" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(950.599995,374.410536) ">
+KK00811</text>
+<text id="text34" x="-27.8057" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(71.109902,364.471688) ">
+RO系统</text>
+<text id="text35" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(998.420971,435.329561) ">
+FS00811</text>
+<line id="line44" x1="-457.597" y1="58.6053" x2="-368.703" y2="59.5223" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1408.629353,352.551785) "/>
+<ellipse id="circle13" cx="-1.69321" cy="-1.83406" rx="5.07963" ry="5.50218" fill="#000000" stroke="#000000" transform="translate(1010.229518,412.920592) "/>
+<ellipse id="circle12" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(959.315502,418.697699) "/>
+<line id="line45" x1="-9.73596" y1="-10.5458" x2="9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(960.768260,400.611225) "/>
+<line id="line46" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(961.614864,421.209135) "/>
+<ellipse id="PD02221_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(818.544654,422.563334) "/>
+<g id="element10" transform="translate(811.407629,405.407998) ">
+<line id="line47" x1="-9.73596" y1="-10.5458" x2="9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(9.735956,0.000000) "/>
+<line id="line48" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(-8.889351,-0.493786) "/>
+</g>
+<ellipse id="PK00111_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(968.563031,138.227520) "/>
+<g id="element9" transform="translate(960.605450,120.987536) ">
+<line id="line47" x1="-9.73596" y1="-10.5458" x2="9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(9.735957,0.000000) "/>
+<line id="line48" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(-8.889350,-0.493786) "/>
+</g>
+<ellipse id="PC01311_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(446.246921,261.137792) "/>
+<ellipse id="PC01211_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(325.208479,260.968494) "/>
+<ellipse id="PD00411_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(194.688062,261.137792) "/>
+<ellipse id="PK02411_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(234.621761,95.903047) "/>
+<ellipse id="PK02211_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(684.129856,301.317825) "/>
+<ellipse id="LR09311_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(579.189930,442.540485) "/>
+<ellipse id="PK09711_Run" cx="-8.2832" cy="-7.54063" rx="19.4719" ry="21.0917" fill="#00FF00" stroke="#000000" transform="translate(679.935905,589.265328) "/>
+<g id="element12" transform="translate(437.338537,242.247153) ">
+<line id="line47" x1="-9.73596" y1="-10.5458" x2="9.73596" y2="10.5458" fill="none" stroke="#000000" transform="translate(9.735956,-0.000000) "/>
+<line id="line48" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(-8.889350,-0.493787) "/>
+</g>
+<g id="element14" transform="translate(316.469417,242.247153) ">
+<line id="line47" x1="-9.73596" y1="-10.5458" x2="9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(9.735956,-0.000000) "/>
+<line id="line48" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(-8.889351,-0.493787) "/>
+</g>
+<g id="element15" transform="translate(187.004000,242.247153) ">
+<line id="line47" x1="-9.73596" y1="-10.5458" x2="9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(9.735956,-0.000000) "/>
+<line id="line48" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(-8.889351,-0.493787) "/>
+</g>
+<text id="text36" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(832.975323,222.578541) ">
+LI02211</text>
+<rect id="rect15" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(832.507627,247.925686) "/>
+<text id="LI02211" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(833.276106,248.587267) ">
+LI02211</text>
+<rect id="rect16" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(867.218426,386.397256) "/>
+<text id="PD00211_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(867.986905,388.058836) ">
+PD00211</text>
+<rect id="rect17" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(907.681062,66.117875) "/>
+<text id="PD00111_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(910.449541,67.779455) ">
+PD00111</text>
+<ellipse id="circle23" cx="-1.69321" cy="-1.83406" rx="5.07963" ry="5.50218" fill="#00FF00" stroke="#000000" transform="translate(1010.229518,412.920592) "/>
+<ellipse id="circle24" cx="-1.69321" cy="-1.83406" rx="5.07963" ry="5.50218" fill="#00FF00" stroke="#000000" transform="translate(633.034502,243.340535) "/>
+<ellipse id="circle25" cx="-1.69321" cy="-1.83406" rx="5.07963" ry="5.50218" fill="#00FF00" stroke="#000000" transform="translate(443.913496,69.531409) "/>
+<text id="text8" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(610.755846,26.500004) ">
+NI02321</text>
+<rect id="rect18" x="-37.2506" y="-11.0044" width="74.5012" height="22.0087" fill="#00FFFF" stroke="#000000" transform="translate(609.850555,49.847150) "/>
+<text id="NI02321_tank" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(612.619034,51.508730) ">
+NI02321</text>
+<g id="element11" transform="translate(236.139643,88.009717) ">
+<line id="line47" x1="-9.73596" y1="-10.5458" x2="9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(0.000000,-10.545848) "/>
+<line id="line48" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(0.846604,10.052062) "/>
+</g>
+<g id="element16" transform="translate(561.287999,434.477858) ">
+<line id="line47" x1="7.63571" y1="-10.7942" x2="-11.8362" y2="10.2975" fill="none" stroke="#000000" transform="translate(2.100247,-10.297548) "/>
+<line id="line48" x1="-9.73595" y1="-10.5458" x2="9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(0.000000,10.545848) "/>
+</g>
+<g id="element7" transform="translate(681.063046,580.948752) ">
+<line id="line47" x1="-9.73596" y1="-10.5458" x2="9.73596" y2="10.5458" fill="none" stroke="#000000" transform="translate(0.000000,-10.545847) "/>
+<line id="line48" x1="-10.5826" y1="11.0397" x2="8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(0.846605,10.052063) "/>
+</g>
+<g id="VA09711_Open" transform="translate(947.819891,569.261406) ">
+<polygon id="line2" points="-6.180725,-11.410626 -6.180725,-34.231877 16.996999,-21.640841" fill="#00FF00" stroke="#000000" transform="translate(-17.071092,34.316482) "/>
+<polygon id="line1" points="6.180726,-11.410626 6.180726,-34.231876 -16.996998,-21.640841" fill="#00FF00" stroke="#000000" transform="translate(17.071089,34.299199) "/>
+<path id="line3" d="M-18.534017,6.221745 C-16.627220,-3.825842 -8.763414,-11.004080 0.336983,-11.004080 9.437380,-11.004080 17.301187,-3.825842 19.207983,6.221745 " fill="#00FF00" stroke="#000000" transform="translate(-0.336935,-11.901780) "/>
+<rect id="rect3" x="-1.01095" y="-5.89778" width="2.02189" height="18.2641" fill="#00FF00" stroke="#000000" transform="translate(0.000048,0.330830) "/>
+<line id="line4" x1="-20.046" y1="0" x2="17.5665" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.320591,-5.657191) "/>
+</g>
+<g id="element13" transform="translate(665.954405,292.578006) ">
+<line id="line47" x1="9.73596" y1="-10.5458" x2="-9.73595" y2="10.5458" fill="none" stroke="#000000" transform="translate(0.000000,-10.545847) "/>
+<line id="line48" x1="10.5826" y1="11.0397" x2="-8.88935" y2="-10.052" fill="none" stroke="#000000" transform="translate(-0.846604,10.052062) "/>
+</g>
+<text id="text7" x="-18.5332" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(813.533162,538.500000) ">
+碱罐</text>
+</svg>
+
+
+
+
+
+ <script>
+	setInterval(function(){showSite()},3000);
+</script>
+</body>
+</html>

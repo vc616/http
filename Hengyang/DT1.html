@@ -1,0 +1,568 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<title>ajax测试程序</title> 
+<script>
+function showSite()
+{
+    if (window.XMLHttpRequest)
+    {
+        // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            var obj = JSON.parse(xmlhttp.responseText); 
+			var key=[];
+			var value=[];
+			
+			for(var p in obj)
+			{
+			key.push(p);
+            value.push(obj[p]);
+            }
+		//	document.getElementById("demo1").innerHTML=key;
+		//	document.getElementById("demo2").innerHTML=value;
+		
+		
+		
+		
+		
+        for (var i in key)
+			{
+			if(value[i]=="False")
+				{
+				try
+				   {
+					//var text = document.getElementById(key[i]);
+					//console.log( text.textContent ); // foo
+					document.getElementById(key[i]).style.display = 'none';
+					}
+				catch(err)
+					{}
+				}
+			if(value[i]=="True")
+			    {
+			    try
+				   {
+			        //var text = document.getElementById(key[i]);
+                    //console.log( text.textContent ); // foo
+                    document.getElementById(key[i]).style.display = '';
+			        }
+			    catch(err)
+				    {}
+			    }
+			
+			
+			else
+			    {
+			    try
+				   {
+			        //var text = document.getElementById(key[i]);
+                    //console.log( text.textContent ); // foo
+                    document.getElementById(key[i]).textContent = value[i];
+			        }
+			    catch(err)
+				    {}
+			
+			    }
+			}
+			    	
+			
+		}
+    }
+    xmlhttp.open("GET","getsite_mysql.php",true);
+    xmlhttp.send();
+}
+</script>
+
+
+
+</head>
+<body>
+
+ <script>
+showSite()
+</script> 
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background-color:#FFFFFF" id="main" viewBox="0.000000 0.000000 1040.000000 650.000000" width="1040.000000" height="650.000000">
+<script type="text/javascript" xlink:href="vg.js"/>
+<defs/>
+<line id="line45" x1="0.415963" y1="-63.5749" x2="-0.415963" y2="63.5749" fill="none" stroke="#000000" transform="translate(335.385234,459.471925) "/>
+<line id="line44" x1="2.50701" y1="-61.0465" x2="0.835669" y2="57.6611" fill="none" stroke="#000000" transform="translate(151.055672,287.869400) "/>
+<line id="line11" x1="-302.667" y1="-1.92649" x2="-148.364" y2="-1.12364" fill="none" stroke="#666633" stroke-width="5" transform="translate(1178.418298,472.790238) "/>
+<line id="line35" x1="-302.667" y1="-1.92649" x2="-282.92" y2="-1.92649" fill="none" stroke="#666633" stroke-width="5" transform="translate(1182.599759,404.336547) "/>
+<line id="line34" x1="-301.874" y1="-2.5" x2="-273.097" y2="-2.5" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1126.490580,405.874934) "/>
+<g id="element22" transform="translate(244.323187,392.281371) ">
+<rect id="rect2" x="-88.7128" y="-121.941" width="135.379" height="234.502" fill="#6666FF" stroke="#000000" transform="translate(20.881422,-13.796374) "/>
+<path id="line3" d="M-67.839299,15.480034 C-52.053355,-3.977587 -26.905065,-15.480033 -0.149982,-15.480033 26.605102,-15.480033 51.753392,-3.977587 67.539336,15.480034 " fill="#6666FF" stroke="#000000" transform="translate(0.007791,-150.044844) "/>
+<path id="line4" d="M-67.839300,-15.480034 C-52.053356,3.977586 -26.905066,15.480032 -0.149982,15.480032 26.605102,15.480032 51.753392,3.977586 67.539336,-15.480034 " fill="#6666FF" stroke="#000000" transform="translate(0.292173,112.769837) "/>
+</g>
+<line id="line16" x1="-287.181" y1="-4.61622" x2="22.3231" y2="-4.61622" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(296.831993,349.928654) "/>
+<line id="line15" x1="-312.687" y1="1.77618" x2="-236.033" y2="0.213678" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(321.396539,277.390423) "/>
+<line id="line5" x1="0" y1="12.5522" x2="0" y2="-12.5522" fill="none" stroke="#66CC33" stroke-width="5" transform="translate(676.942782,176.209439) "/>
+<ellipse id="circle1" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#999999" stroke="#000000" transform="translate(133.817090,351.948501) "/>
+<g id="element5" transform="translate(219.945016,96.134335) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214285,5.742232 C-16.340382,-3.530979 -8.612235,-10.155985 0.331169,-10.155985 9.274574,-10.155985 17.002721,-3.530979 18.876625,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293601,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g transform="translate(216.720959,165.433920) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070243,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340383,-3.530979 -8.612236,-10.155985 0.331168,-10.155985 9.274574,-10.155985 17.002720,-3.530979 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<ellipse id="circle6" cx="-8.17621" cy="-6.95946" rx="19.2204" ry="19.4661" fill="#999999" stroke="#000000" transform="translate(147.950336,467.812264) "/>
+<g id="element12" transform="translate(595.686993,278.271065) ">
+<rect id="rect7" x="-27.3967" y="-105.042" width="60.0117" height="181.016" fill="#6666FF" stroke="#000000" transform="translate(-3.207105,14.534085) "/>
+<line id="line1" x1="-24.1352" y1="-59.4576" x2="34.5719" y2="76.6342" fill="#6666FF" stroke="#000000" transform="translate(-5.272810,-4.624482) "/>
+<line id="line2" x1="30.0058" y1="0" x2="-30.0058" y2="0" fill="#6666FF" stroke="#000000" transform="translate(0.597899,70.688508) "/>
+<line id="line3" x1="30.0058" y1="0" x2="-30.0058" y2="0" fill="#6666FF" stroke="#000000" transform="translate(-0.143700,-65.420890) "/>
+</g>
+<g id="element13" transform="translate(675.911369,278.271065) ">
+<rect id="rect7" x="-27.3967" y="-105.042" width="60.0117" height="181.016" fill="#6666FF" stroke="#000000" transform="translate(-3.207105,14.534085) "/>
+<line id="line1" x1="-24.1352" y1="-59.4576" x2="34.5719" y2="76.6342" fill="#6666FF" stroke="#000000" transform="translate(-5.272809,-4.624482) "/>
+<line id="line2" x1="30.0058" y1="0" x2="-30.0058" y2="0" fill="#6666FF" stroke="#000000" transform="translate(0.597899,70.688508) "/>
+<line id="line3" x1="30.0058" y1="0" x2="-30.0058" y2="0" fill="#6666FF" stroke="#000000" transform="translate(-0.143699,-65.420890) "/>
+</g>
+<line id="line1" x1="0" y1="12.5522" x2="0" y2="-12.5522" fill="none" stroke="#66CC33" stroke-width="5" transform="translate(595.152465,174.236270) "/>
+<line id="line2" x1="506.039" y1="-12.2116" x2="65.5206" y2="-15.217" fill="#66CC33" stroke="#66CC33" stroke-width="5" transform="translate(525.479440,175.217020) "/>
+<g id="VA18011_Open" transform="translate(1155.566144,-18.200734) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070243,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340382,-3.530978 -8.612236,-10.155983 0.331168,-10.155983 9.274573,-10.155983 17.002719,-3.530978 18.876623,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624769,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995838,165.403018) "/>
+</g>
+<line id="line8" x1="0" y1="59.7777" x2="0" y2="-12.5522" fill="none" stroke="#66CC33" stroke-width="5" transform="translate(948.509319,173.232181) "/>
+<line id="line10" x1="95.0211" y1="-12.5522" x2="6.65323" y2="-12.5522" fill="none" stroke="#66CC33" stroke-width="5" transform="translate(938.997921,245.562079) "/>
+<g id="element16" transform="translate(1155.566144,50.500019) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070243,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340382,-3.530978 -8.612236,-10.155983 0.331168,-10.155983 9.274573,-10.155983 17.002719,-3.530978 18.876623,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624769,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995838,165.403018) "/>
+</g>
+<line id="line9" x1="-296.852" y1="1.2746" x2="127.994" y2="1.2746" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(742.728512,470.863748) "/>
+<g id="element18" transform="translate(1033.496874,221.912050) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340383,-3.530979 -8.612236,-10.155985 0.331168,-10.155985 9.274574,-10.155985 17.002720,-3.530979 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293601,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g id="element19" transform="translate(1155.566144,288.301339) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070243,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340382,-3.530978 -8.612236,-10.155983 0.331168,-10.155983 9.274573,-10.155983 17.002719,-3.530978 18.876623,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624769,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995838,165.403018) "/>
+</g>
+<line id="line12" x1="-305.822" y1="-1.92649" x2="-305.822" y2="-393.917" fill="none" stroke="#666633" stroke-width="5" transform="translate(1237.403009,472.414699) "/>
+<line id="line13" x1="-286.278" y1="-4.68557" x2="-190.273" y2="-4.68557" fill="none" stroke="#666633" stroke-width="5" transform="translate(1217.858022,403.318318) "/>
+<line id="line14" x1="-531.907" y1="-28.0115" x2="266.264" y2="-27.9682" fill="none" stroke="#666633" stroke-width="5" transform="translate(666.907411,106.509758) "/>
+<line id="line17" x1="-303.415" y1="-13.5363" x2="-303.415" y2="55.5229" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(388.778137,291.140423) "/>
+<line id="line3" x1="-302.215" y1="8.83526" x2="-302.215" y2="58.7832" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(621.370096,336.477191) "/>
+<line id="line20" x1="-302.667" y1="0" x2="-228.63" y2="0" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(674.120137,472.138350) "/>
+<line id="line21" x1="-303.504" y1="-19.4792" x2="-304.739" y2="185.908" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(402.228634,161.666601) "/>
+<rect id="rect4" x="-68.4916" y="-89.8473" width="114.805" height="121.875" fill="#999999" fill-rule="evenodd" stroke="#000000" transform="translate(111.745767,110.159509) "/>
+<line id="line25" x1="-302.667" y1="0" x2="-302.982" y2="101.684" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(880.815444,368.958268) "/>
+<line id="line26" x1="-302.667" y1="0" x2="-302.982" y2="101.684" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(913.113983,368.541601) "/>
+<line id="line27" x1="-302.667" y1="0" x2="-302.982" y2="101.684" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(961.660016,368.958268) "/>
+<line id="line28" x1="-302.667" y1="0" x2="-302.982" y2="101.684" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(993.958555,368.541601) "/>
+<ellipse id="circle8" cx="-8.17621" cy="-6.95946" rx="19.2204" ry="19.4661" fill="#999999" stroke="#000000" transform="translate(666.532001,422.308126) "/>
+<ellipse id="circle7" cx="-8.17621" cy="-6.95946" rx="19.2204" ry="19.4661" fill="#999999" stroke="#000000" transform="translate(585.818401,422.308126) "/>
+<line id="line33" x1="-301.874" y1="-2.5" x2="-303.335" y2="64.0676" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(1126.490580,405.874934) "/>
+<line id="line36" x1="-305.819" y1="-366.998" x2="-305.822" y2="-434.542" fill="none" stroke="#666633" stroke-width="5" transform="translate(1205.502222,836.951567) "/>
+<g id="element20" transform="translate(1155.566144,215.636745) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070243,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340382,-3.530978 -8.612236,-10.155983 0.331168,-10.155983 9.274573,-10.155983 17.002719,-3.530978 18.876623,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624769,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995838,165.403018) "/>
+</g>
+<line id="line37" x1="-300.673" y1="0.698566" x2="-300.673" y2="109.663" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(468.069143,289.815967) "/>
+<line id="line38" x1="-300.211" y1="-0.368866" x2="-142.725" y2="-3.95638" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(467.606709,290.883399) "/>
+<line id="line39" x1="-300.673" y1="26.9356" x2="-300.702" y2="73.7679" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(544.488403,215.134701) "/>
+<line id="line40" x1="-320.641" y1="0.698566" x2="-320.641" y2="285.073" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(645.523791,286.228451) "/>
+<line id="line41" x1="-302.398" y1="6.42544" x2="-86.4215" y2="2.2067" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(469.793744,393.053654) "/>
+<line id="line19" x1="-283.64" y1="2.2067" x2="-116.088" y2="0.924143" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(442.634450,458.646101) "/>
+<ellipse id="circle11" cx="0" cy="-13.5417" rx="6.68536" ry="6.77083" fill="#CCCCCC" stroke="#000000" transform="translate(243.815107,255.611914) "/>
+<ellipse id="circle12" cx="0" cy="-13.5417" rx="6.68536" ry="6.77083" fill="#CCCCCC" stroke="#000000" transform="translate(244.650778,520.520768) "/>
+<line id="line42" x1="-296.524" y1="4.08398" x2="-297.359" y2="115.802" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(542.010393,391.176368) "/>
+<g id="element23" transform="translate(367.642782,433.703462) ">
+<rect id="rect3" x="-22.1782" y="-47.5661" width="44.3565" height="89.8473" fill="#999999" stroke="#000000" transform="translate(0.000000,2.642561) "/>
+<rect id="rect2" x="-11.7414" y="-22.4617" width="23.4829" height="56.8151" fill="none" stroke="#000000" transform="translate(0.000000,-6.606403) "/>
+<line id="line19" x1="-22.1782" y1="0" x2="22.1782" y2="0" fill="none" stroke="#000000" transform="translate(0.000000,-29.068171) "/>
+</g>
+<g id="element2" transform="translate(372.495151,107.966970) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340384,-3.530981 -8.612237,-10.155988 0.331168,-10.155988 9.274574,-10.155988 17.002722,-3.530981 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g id="element3" transform="translate(451.414929,106.645689) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340384,-3.530981 -8.612237,-10.155988 0.331168,-10.155988 9.274574,-10.155988 17.002722,-3.530981 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g id="element7" transform="translate(371.659480,217.052341) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070243,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214285,5.742232 C-16.340381,-3.530978 -8.612235,-10.155983 0.331169,-10.155983 9.274574,-10.155983 17.002720,-3.530978 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g id="element8" transform="translate(451.414929,212.994185) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340384,-3.530981 -8.612237,-10.155988 0.331168,-10.155988 9.274574,-10.155988 17.002722,-3.530981 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g id="element9" transform="translate(372.495151,278.257771) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340384,-3.530981 -8.612237,-10.155988 0.331168,-10.155988 9.274574,-10.155988 17.002722,-3.530981 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g id="element10" transform="translate(451.414929,277.731095) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340384,-3.530981 -8.612237,-10.155988 0.331168,-10.155988 9.274574,-10.155988 17.002722,-3.530981 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<line id="line43" x1="-275.172" y1="13.5417" x2="432.957" y2="13.5417" fill="none" stroke="#CC6600" stroke-width="5" transform="translate(600.053764,557.760351) "/>
+<text id="text1" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(51.359266,299.736919) ">
+VA12011</text>
+<text id="text2" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(51.359266,368.695251) ">
+VA19411</text>
+<text id="text3" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(211.629007,311.583267) ">
+VA13111</text>
+<text id="text4" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(282.916499,309.124934) ">
+VA13161</text>
+<text id="text5" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(243.181591,365.520767) ">
+VA13011</text>
+<text id="text6" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(213.247747,420.417903) ">
+VA13151</text>
+<text id="text7" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(282.636461,420.032486) ">
+VA13121</text>
+<text id="text8" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(212.247747,484.740819) ">
+VA13811</text>
+<text id="text9" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(281.636461,481.778580) ">
+VA13081</text>
+<text id="text10" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(138.037497,494.320252) ">
+PK13811</text>
+<text id="text11" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(123.564232,374.599866) ">
+PK13011</text>
+<text id="text12" x="-18.5332" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(372.380242,495.320247) ">
+芯滤</text>
+<text id="text16" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(448.137356,501.937439) ">
+PP16011</text>
+<text id="text17" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(577.970862,485.010356) ">
+PK16111</text>
+<text id="text18" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(658.195238,485.010356) ">
+PK16211</text>
+<text id="text22" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(864.445497,424.765564) ">
+VA16921</text>
+<text id="text23" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(864.445497,490.781189) ">
+VA16911</text>
+<text id="text21" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(987.514760,491.088481) ">
+VA17031</text>
+<text id="text24" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(988.514760,419.455669) ">
+VA17021</text>
+<text id="text25" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(988.514760,254.570252) ">
+VA18021</text>
+<text id="text26" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(989.514760,184.861919) ">
+VA18011</text>
+<text id="text27" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(708.119003,99.072856) ">
+VA17011</text>
+<ellipse id="circle4" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#999999" stroke="#000000" transform="translate(455.337648,477.423472) "/>
+<text id="text28" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(340.019708,544.856705) ">
+PI14021</text>
+<rect id="rect10" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(342.338590,524.739517) "/>
+<line id="line46" x1="-0.415963" y1="12.6665" x2="-0.415963" y2="63.5749" fill="none" stroke="#000000" transform="translate(401.320786,459.471925) "/>
+<text id="text30" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(408.778319,543.856705) ">
+PI15021</text>
+<rect id="rect2" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(410.097200,524.739517) "/>
+<line id="line47" x1="-0.415963" y1="12.6665" x2="-0.415963" y2="63.5749" fill="none" stroke="#000000" transform="translate(484.970270,459.599134) "/>
+<text id="text32" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(482.443802,543.983914) ">
+PI16021</text>
+<rect id="rect3" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(483.762683,524.866727) "/>
+<text id="text34" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(591.312132,543.856705) ">
+PI16121</text>
+<rect id="rect5" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(592.631013,524.739517) "/>
+<text id="text36" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(672.372179,543.856705) ">
+PI16221</text>
+<rect id="rect6" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(673.691060,524.739517) "/>
+<rect id="rect9" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(952.617930,518.815038) "/>
+<rect id="rect11" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(952.617930,539.127538) "/>
+<text id="text44" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(881.637779,519.005142) ">
+NI17021</text>
+<text id="text45" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(881.637779,540.163996) ">
+YI17021</text>
+<rect id="rect13" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(901.642025,103.255142) "/>
+<text id="text49" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(831.661865,103.291600) ">
+NI18021</text>
+<rect id="rect14" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(901.642025,123.567642) "/>
+<rect id="rect15" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(901.642025,143.880142) "/>
+<text id="text52" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(831.661865,122.757746) ">
+FI18021</text>
+<text id="text53" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(831.661865,143.916600) ">
+PI18021</text>
+<text id="text46" x="-37.0869" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(252.427111,114.447850) ">
+PDI13021</text>
+<rect id="rect12" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(252.984021,132.877538) "/>
+<text id="text54" x="-37.0869" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(365.028183,114.447850) ">
+PDI14021</text>
+<rect id="rect16" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(365.585092,132.877538) "/>
+<g id="element17" transform="translate(865.203225,460.244588) ">
+<polygon id="line15" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#FFFF00" stroke="#000000" transform="translate(-16.776595,31.671690) "/>
+<polygon id="line19" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#FFFF00" stroke="#000000" transform="translate(16.776595,31.655740) "/>
+<path id="line20" d="M-18.214286,5.742232 C-16.340383,-3.530979 -8.612236,-10.155985 0.331168,-10.155985 9.274574,-10.155985 17.002720,-3.530979 18.876624,5.742232 " fill="#FFFF00" stroke="#000000" transform="translate(-0.331121,-10.984501) "/>
+<rect id="rect7" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#FFFF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line29" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#FFFF00" stroke="#000000" transform="translate(1.297809,-5.221186) "/>
+</g>
+<text id="text60" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(116.392392,223.204361) ">
+PI13021</text>
+<rect id="rect19" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(176.961460,223.860611) "/>
+<text id="text62" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(116.392392,162.690038) ">
+NI13021</text>
+<rect id="rect20" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(176.961460,163.346288) "/>
+<text id="text64" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(116.392392,183.002538) ">
+TI13021</text>
+<rect id="rect21" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(176.961460,183.658788) "/>
+<text id="text66" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(116.392392,202.891861) ">
+FI13021</text>
+<rect id="rect22" x="-36.7695" y="-10.1563" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(176.961460,203.548111) "/>
+<rect id="rect23" x="-36.7695" y="-10.1562" width="59.2502" height="17.7734" fill="#00FFFF" stroke="#000000" transform="translate(109.272143,88.867122) "/>
+<text id="text29" x="-32.4507" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(109.624602,71.283788) ">
+LI11021</text>
+<g id="element38" transform="translate(865.098747,460.244589) ">
+<polygon id="line30" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703781,-19.972968" fill="#FF0000" stroke="#000000" transform="translate(-16.776595,31.671689) "/>
+<polygon id="line31" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#FF0000" stroke="#000000" transform="translate(16.776595,31.655739) "/>
+<path id="line32" d="M-18.214286,5.742232 C-16.340382,-3.530978 -8.612236,-10.155983 0.331168,-10.155983 9.274573,-10.155983 17.002719,-3.530978 18.876623,5.742232 " fill="#FF0000" stroke="#000000" transform="translate(-0.331121,-10.984502) "/>
+<rect id="rect8" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#FF0000" stroke="#000000" transform="translate(0.000047,0.305333) "/>
+<line id="line37" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#FF0000" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA12011_Open" transform="translate(51.533909,266.758540) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703782,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671689) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655739) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984502) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305333) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221188) "/>
+</g>
+<g id="el6" transform="translate(244.176129,334.407982) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703782,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA13111_Open" transform="translate(203.873052,278.432088) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776595,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000048,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA13161_Open" transform="translate(283.261758,277.585734) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703782,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA13151_Open" transform="translate(203.037382,387.611776) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530981 -8.612236,-10.155988 0.331169,-10.155988 9.274574,-10.155988 17.002721,-3.530981 18.876624,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA13121_Open" transform="translate(283.261758,383.380005) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703782,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA13811_Open" transform="translate(203.873052,448.549276) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776595,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000048,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA13081_Open" transform="translate(283.261758,448.549276) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703782,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA19411_Open" transform="translate(48.309852,335.984172) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776595,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000048,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA17011_close" transform="translate(707.936582,65.843547) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530981 -8.612236,-10.155988 0.331169,-10.155988 9.274574,-10.155988 17.002721,-3.530981 18.876624,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="el15" transform="translate(987.168017,152.325317) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340382,-3.530981 -8.612235,-10.155988 0.331170,-10.155988 9.274575,-10.155988 17.002722,-3.530981 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331123,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<ellipse id="PK13011_Run" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#00FF00" stroke="#000000" transform="translate(133.543889,351.425567) "/>
+<g id="VA18021_Open" transform="translate(987.168017,220.880005) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340382,-3.530981 -8.612235,-10.155988 0.331170,-10.155988 9.274575,-10.155988 17.002722,-3.530981 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331123,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA17021_Open" transform="translate(987.168017,385.919067) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340382,-3.530981 -8.612235,-10.155988 0.331170,-10.155988 9.274575,-10.155988 17.002722,-3.530981 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331123,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA17031_Open" transform="translate(987.168017,458.705526) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703781,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340382,-3.530981 -8.612235,-10.155988 0.331170,-10.155988 9.274575,-10.155988 17.002722,-3.530981 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331123,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<g id="VA16921_Open" transform="translate(865.085767,392.536255) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703782,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776596,31.671690) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340383,-3.530982 -8.612236,-10.155989 0.331169,-10.155989 9.274575,-10.155989 17.002723,-3.530982 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331122,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<ellipse id="PP16011_Run" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#00FF00" stroke="#000000" transform="translate(455.220190,477.423472) "/>
+<ellipse id="PK16211_Run" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#00FF00" stroke="#000000" transform="translate(666.414543,422.308127) "/>
+<ellipse id="PK16111_Run" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#00FF00" stroke="#000000" transform="translate(585.700943,422.308127) "/>
+<g id="VA16911_Open" transform="translate(865.085768,460.244588) ">
+<polygon id="line2" points="-6.074102,-10.531202 -6.074102,-31.593605 16.703782,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(-16.776597,31.671690) "/>
+<polygon id="line1" points="6.074102,-10.531202 6.074102,-31.593605 -16.703780,-19.972968" fill="#00FF00" stroke="#000000" transform="translate(16.776594,31.655740) "/>
+<path id="line3" d="M-18.214285,5.742231 C-16.340382,-3.530981 -8.612235,-10.155988 0.331170,-10.155988 9.274575,-10.155988 17.002722,-3.530981 18.876625,5.742231 " fill="#00FF00" stroke="#000000" transform="translate(-0.331123,-10.984501) "/>
+<rect id="rect3" x="-0.993508" y="-5.44324" width="1.98702" height="16.8565" fill="#00FF00" stroke="#000000" transform="translate(0.000047,0.305334) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="#00FF00" stroke="#000000" transform="translate(1.297809,-5.221187) "/>
+</g>
+<ellipse id="PK13011_Fault" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#FF0000" stroke="#000000" transform="translate(133.543889,351.778629) "/>
+<ellipse id="PK13811_Fault" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#FF0000" stroke="#000000" transform="translate(147.405975,467.305951) "/>
+<ellipse id="PP16011_Fault" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#FF0000" stroke="#000000" transform="translate(455.220190,477.423472) "/>
+<ellipse id="PK16111_Fault" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#FF0000" stroke="#000000" transform="translate(585.346876,423.097720) "/>
+<ellipse id="PK16211_Fault" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#FF0000" stroke="#000000" transform="translate(666.517748,423.097720) "/>
+<g id="element42" transform="translate(579.064828,406.370959) ">
+<line id="line44" x1="9.61018" y1="9.73307" x2="-9.61018" y2="-9.73307" fill="none" stroke="#000000" transform="translate(9.610212,0.000000) "/>
+<line id="line45" x1="-9.61018" y1="9.73307" x2="9.61018" y2="-9.73307" fill="none" stroke="#000000" transform="translate(-9.610212,0.000000) "/>
+</g>
+<g id="element43" transform="translate(659.514025,405.826757) ">
+<line id="line44" x1="9.61018" y1="9.73307" x2="-9.61018" y2="-9.73307" fill="none" stroke="#000000" transform="translate(9.610212,0.000000) "/>
+<line id="line45" x1="-9.61018" y1="9.73307" x2="9.61018" y2="-9.73307" fill="none" stroke="#000000" transform="translate(-9.610212,0.000000) "/>
+</g>
+<g id="element49" transform="translate(456.559343,471.419205) ">
+<line id="line44" x1="-9.61018" y1="-9.73307" x2="9.61018" y2="9.73307" fill="none" stroke="#000000" transform="translate(0.000000,-9.733073) "/>
+<line id="line45" x1="-9.61018" y1="9.73307" x2="9.61018" y2="-9.73307" fill="none" stroke="#000000" transform="translate(0.000000,9.733073) "/>
+</g>
+<g id="element40" transform="translate(135.251086,344.989035) ">
+<line id="line44" x1="-9.61018" y1="-9.73307" x2="9.61018" y2="9.73307" fill="none" stroke="#000000" transform="translate(0.000000,-9.733073) "/>
+<line id="line45" x1="-9.61018" y1="9.73307" x2="9.61018" y2="-9.73307" fill="none" stroke="#000000" transform="translate(0.000000,9.733073) "/>
+</g>
+<ellipse id="PK13811_Run" cx="-8.17621" cy="-6.95947" rx="19.2204" ry="19.4661" fill="#00FF00" stroke="#000000" transform="translate(147.405975,467.305951) "/>
+<g id="element41" transform="translate(149.375264,460.769662) ">
+<line id="line44" x1="-9.61018" y1="-9.73307" x2="9.61018" y2="9.73307" fill="none" stroke="#000000" transform="translate(0.000000,-9.733073) "/>
+<line id="line45" x1="-9.61018" y1="9.73307" x2="9.61018" y2="-9.73307" fill="none" stroke="#000000" transform="translate(0.000000,9.733073) "/>
+</g>
+<text id="LI11021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" transform="translate(103.131630,89.057225) ">
+LI11021</text>
+<text id="PI14021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(337.540759,525.929621) ">
+PI14021</text>
+<text id="PI15021" x="-5.68434e-014" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(405.299370,525.929621) ">
+PI15021</text>
+<text id="PI16021" x="-5.68434e-014" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(476.964845,525.056831) ">
+PI16021</text>
+<text id="PI16121" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(588.833183,525.929621) ">
+PI16121</text>
+<text id="PI16221" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(669.893230,525.929621) ">
+PI16221</text>
+<text id="NI17021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(947.820101,519.005142) ">
+NI17021</text>
+<text id="YI17021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(947.820101,539.317642) ">
+YI17021</text>
+<text id="NI18021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(896.844195,103.445246) ">
+NI18021</text>
+<text id="FI18021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(896.844195,123.757746) ">
+FI18021</text>
+<text id="PI18021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(896.844195,144.070246) ">
+PI18021</text>
+<text id="PDI13021" x="-2.84217e-014" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(248.387074,133.067642) ">
+PDI13021</text>
+<text id="PDI14021" x="5.68434e-014" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(359.988146,133.067642) ">
+PDI14021</text>
+<text id="PI13021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(172.163630,224.050715) ">
+PI13021</text>
+<text id="NI13021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(172.163630,163.536392) ">
+NI13021</text>
+<text id="TI13021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(172.163630,183.848892) ">
+TI13021</text>
+<text id="FI13021" x="0" y="4.5" font-family="SimSun" font-size="18" text-anchor="middle" fill-rule="evenodd" stroke="none" transform="translate(172.163630,203.738215) ">
+FI13021</text>
+<text id="text31" x="-27.8013" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(98.801254,122.500000) ">
+缓冲罐</text>
+<text id="text33" x="-18.5332" y="4.5" font-family="SimSun" font-size="18" text-anchor="start" transform="translate(235.533187,555.500000) ">
+砂滤</text>
+<g id="VA13011_Open" transform="translate(413.587235,163.783778) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703782,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070244,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214286,5.742232 C-16.340383,-3.530979 -8.612236,-10.155985 0.331168,-10.155985 9.274574,-10.155985 17.002720,-3.530979 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293601,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+<g id="VA17011_Open" transform="translate(876.317181,-104.023377) ">
+<polygon id="line2" points="-6.074103,-10.531202 -6.074103,-31.593605 16.703781,-19.972968" fill="#999999" stroke="#000000" transform="translate(-185.070243,202.295895) "/>
+<polygon id="line1" points="6.074103,-10.531202 6.074103,-31.593605 -16.703780,-19.972968" fill="#999999" stroke="#000000" transform="translate(-151.517053,202.279944) "/>
+<path id="line3" d="M-18.214285,5.742232 C-16.340381,-3.530978 -8.612235,-10.155983 0.331169,-10.155983 9.274574,-10.155983 17.002720,-3.530978 18.876624,5.742232 " fill="#999999" stroke="#000000" transform="translate(-168.624770,159.639703) "/>
+<rect id="rect3" x="-0.993508" y="-5.44323" width="1.98702" height="16.8565" fill="#999999" stroke="#000000" transform="translate(-168.293600,170.929539) "/>
+<line id="line4" x1="-19.7002" y1="0" x2="17.2635" y2="0" fill="none" stroke="#000000" transform="translate(-166.995839,165.403018) "/>
+</g>
+</svg>
+
+
+ <script>
+	setInterval(function(){showSite()},3000);
+</script>
+
+
+</body>
+</html>
