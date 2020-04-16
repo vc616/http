@@ -6,10 +6,13 @@ $xl = array('NI13021','FI18021','FI28021','PI16021');
 $s1 = "'NI13021',,'FI18021','FI28021','PI16021'";
 $s2 = "NI13021,FI18021,FI28021,PI16021 ";
 //第一次打开曲线默认显示变量
+
+
 $n = 4;
 $time1 = date('Y-m-d H:i:00', time()-86400);
 $time2 = date('Y-m-d H:i:s',time());
-$sql_2 = "SELECT TIME ,{$s2}FROM `{$project}` WHERE TIME > '{$time1}' AND TIME < '{$time2}'";
+$P = $project."_r"; 
+$sql_2 = "SELECT TIME ,{$s2}FROM `{$P}` WHERE TIME > '{$time1}' AND TIME < '{$time2}'";
 //echo $sql_2;
 $result_2 = mysqli_query($conn, $sql_2);
 
