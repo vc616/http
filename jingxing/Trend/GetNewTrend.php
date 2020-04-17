@@ -7,11 +7,10 @@ $NI1 = "'NI18021','NI28021'";
 $NI10 = "'NI02321_tank','NI13021','NI17021','NI27021'";
 $TI = "'TI13021'";
 $PI10 = "'PI13021','PI14021','PI15021','PI18021'";
-
 $PI100 = "'PI16021','PI16121','PI16221','PI16321','PI16421','PI26021'";
 $PH = "'YI02321_tank','YI09721_tank','YI02221_tank','YI17021'";
 $FI = "'FI02321_tank','FI18021','FI28021'";
-
+$UI = "'UI18021','UI28021'";
 $s1 = $s2 = "";
 $xl = array();
 $n = 0;
@@ -51,6 +50,11 @@ foreach($_POST["v"] as $x=>$x_value)
 	{
 		$n = $n + substr_count($FI,"FI");	
 		$s1 = $s1. $FI."," ;	
+	}
+		if ($x_value == "UI")
+	{
+		$n = $n + substr_count($UI,"UI");	
+		$s1 = $s1. $UI."," ;	
 	}
 }
 $s1 = substr($s1,0,-1);                  //曲线标题head

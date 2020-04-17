@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>ECharts</title>
-    <!-- 引入 echarts.js -->
-    <script src="../../js/echarts.min.js"></script>
-    <script type="text/javascript" src="../../js/jedate.js"></script>
- <style> 
- 
-     <!-- 
-	 
-	display: -webkit-flex;
-    display: flex;
-	 
-	 
-	 -->
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>ECharts</title> 
+  <!-- 引入 echarts.js --> 
+  <script src="../../js/echarts.min.js"></script> 
+  <script type="text/javascript" src="../../js/jedate.js"></script> 
+  <style> 
 .box {
 
     width: 1060px;
@@ -24,7 +16,7 @@ margin: 3px;
 
 .column_top {
     background-color: #CCFFCC;
-    width: 1068px;
+    width: 1060px;
     height: 620px;   
 	margin: 1px;
 }
@@ -38,71 +30,75 @@ margin: 3px;
 .column_right {
     font-size:120%;
     background-color: #CCFFCC;
-    width:1068px;
+    width:1060px;
     height: 120px;
 	margin: 1px;
 	float：left;
 }
-</style>
-	
-</head>
-<body>
-<script>
-
+</style> 
+ </head> 
+ <body> 
+  <script>
 function validateForm(){
-
        var arr = new Array();                
         var items = document.getElementsByName("v[]");                 
         for (i = 0; i < items.length; i++) {                    
             if (items[i].checked) {                        
                 arr.push(items[i].value);                    
             }                
-        }  
-		
-	     if(arr.length == 0){
+        }		
+	    if(arr.length == 0){
 		alert("您未选择任何归档数据!");
-		//alert("您未选择任何需要显示的数据！")；
 		return false;
 		}   
-		
-		
-
-  
 }
-</script>
 
+function getnewtrend{
+	if (window.XMLHttpRequest) {
+		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp = new XMLHttpRequest();
+	} else {
+		// IE6, IE5 浏览器执行代码
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	
+	
+	
 
+}
 
-
-<div class = "box">
-    <div class="column_top"   id="main" >
-	</div>
-    <div class="left"   id="main" >
-	</div>
-  <div class="column_right"   id="form_right" > 
-  <br>
-  请选择需要查看的数据：<br>
-<form action="GetNewTrend.php" onsubmit="return validateForm();" method="post"style = "font-size: 110%">
-<input type="checkbox" name="v[]" value="NI1" style="width:16px;height:16px;">NI(1)
-<input type="checkbox" name="v[]" value="NI10" style="width:16px;height:16px;">NI(10)
-<input type="checkbox" name="v[]" value="TI" style="width:16px;height:16px;">TI  
-<input type="checkbox" name="v[]" value="PI10" style="width:16px;height:16px;">PI(10bar)  
-<input type="checkbox" name="v[]" value="PI100" style="width:16px;height:16px;">PI(100bar)  
-<input type="checkbox" name="v[]" value="FI" style="width:16px;height:16px;">FI  
-<input type="checkbox" name="v[]" value="PH" style="width:16px;height:16px;">PH<br>
-开始时间：<input class="datainp" name="Start_Time" id="dateinfo" type="text" placeholder="请选择" value = "<?php echo date('Y-m-d H:i:s', time()-86400);?>" readonly>
-持续:<input type="number" name="durations1" min="0" max="9999" value=24 style = "height:25px; width:45px;font-size: 100%">小时
-<input type="number" name="durations2" min="0" max="59"  value=0 style = "height:25px; width:40px;font-size: 100%">分
-<input type="reset" value="重 置"style = "height:32px; width:60px;font-size: 100%;left:200px;margin:5px 25px;">
-<input type="submit" value="确 定"style = "height:32px; width:60px;font-size: 100%;left:200px;"><br>
-</form> 
-</div>
-</div>
-
- 
-      <!-- 为ECharts准备一个具备大小(宽高)的Dom -->
-    <!-- class="column_half left_half"   <div id="main" style="width: 1000px;height:700px;"></div> -->
-<script type="text/javascript">
+</script> 
+  <div class="box"> 
+   <div class="column_top" id="main"> 
+   </div> 
+   <div class="left" id="main"> 
+   </div> 
+   <div class="column_right" id="form_right"> 
+    <br /> 请选择需要查看的数据：
+    <br /> 
+    <form action="GetNewTrend.php" onsubmit="return validateForm();" method="post" style="font-size: 110%"> 
+     <input type="checkbox" name="v[]" value="NI1" style="width:16px;height:16px;" />NI(1) 
+     <input type="checkbox" name="v[]" value="NI10" style="width:16px;height:16px;" />NI(10) 
+     <input type="checkbox" name="v[]" value="TI" style="width:16px;height:16px;" />TI 
+     <input type="checkbox" name="v[]" value="PI10" style="width:16px;height:16px;" />PI(10bar) 
+     <input type="checkbox" name="v[]" value="PI100" style="width:16px;height:16px;" />PI(100bar) 
+     <input type="checkbox" name="v[]" value="FI" style="width:16px;height:16px;" />FI 
+     <input type="checkbox" name="v[]" value="PH" style="width:16px;height:16px;" />PH
+	 <input type="checkbox" name="v[]" value="UI" style="width:16px;height:16px;" />UI
+     <br /> 开始时间：
+     <input class="datainp" name="Start_Time" id="dateinfo" type="text" placeholder="请选择" value="<?php echo date('Y-m-d H:i:s', time()-86400)?>" readonly="" /> 持续:
+     <input type="number" name="durations1" min="0" max="9999" value="24" style="height:25px; width:45px;font-size: 100%" />小时 
+     <input type="number" name="durations2" min="0" max="59" value="0" style="height:25px; width:40px;font-size: 100%" />分 
+     <input type="reset" value="重 置" style="height:32px; width:60px;font-size: 100%;left:200px;margin:5px 25px;" /> 
+     <input type="submit" value="确 定" style="height:32px; width:60px;font-size: 100%;left:200px;" />
+     <br /> 
+    </form> 
+   </div> 
+  </div> 
+  <!-- 为ECharts准备一个具备大小(宽高)的Dom --> 
+  <!-- class="column_half left_half"   <div id="main" style="width: 1000px;height:700px;"></div> --> 
+  <script type="text/javascript">
     jeDate({
 		dateCell:"#dateinfo",
 		format:"YYYY-MM-DD hh:mm:ss",
@@ -112,11 +108,8 @@ function validateForm(){
 		//zIndex:999
 		okfun:function(val){alert(val)}
 	})
-</script>
-
-  
-
-<script type="text/javascript">
+</script> 
+  <script type="text/javascript">
 //
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -124,43 +117,40 @@ function validateForm(){
         var option = {
 		title: {
         text: '历史数据归档'
-    },
-	 tooltip: {
-        trigger: 'axis'
-    },
-    legend: {
-        data:[<?php echo $s1; ?>]
-    },
-	    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    toolbox: {
-        feature: {
-            saveAsImage: {}
-        }
-    },
-		
-    xAxis: {
-        type: 'category',
-        data: <?php echo json_encode($obj[0]); ?>,
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [<?php echo $st;?>
-	]
+				},
+				 tooltip: {
+					trigger: 'axis'
+				},
+				legend: {
+					data:[<?php echo $s1; ?>]
+				},
+					grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				toolbox: {
+					feature: {
+						saveAsImage: {}
+					}
+				},
+					
+				xAxis: {
+					type: 'category',
+					data: <?php echo json_encode($obj[0]); ?>,
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: [<?php echo $st;?>
+				]
 	
 	
 };
 window.onload = myChart.resize;
 window.onresize = myChart.resize;
 myChart.setOption(option);
- </script>
-
- 
-
-</body>
+ </script>   
+ </body>
 </html>
