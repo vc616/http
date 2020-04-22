@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>form表单</title>
+        <meta charset="utf-8">
+        
+	 <script>	
+function getValue(){
+
+    var v1 = document.form1;
+    var arr = document.form1.check;
+    //alert(arr[1].value)
+	
+	//alert(v1.text1.value)
+	f = document.forms[0].check;
+	txt = "";
+	for (i = 0;i < f.length;++i)
+	{
+	if (f[i].checked)
+	{
+	txt=txt + f[i].value + " "
+	}
+	}
+	document.getElementById("order").value="您订购的咖啡带有： " + txt + f.length
+	}
+	
+
+ 
+	 
+  </script>		  
+		
+		
+    </head>
+        <body>
+            <form name="form1">
+                <!--文本-->
+                <input type="text" placeholder="text" name="text1" />
+                <!--密码-->
+                <input type="password" placeholder="password" name="password" />
+                <!--多行文本域-->
+                <textarea placeholder="textarea" name="textarea" style="resize:none"></textarea>
+                <!--文件上传-->
+                <input type="file" name="file"/>
+                <!--单选框,注意name值一样-->
+                <input type="radio" name="option" value="option1"/>option1
+                <input type="radio" name="option" value="option1"/>option2
+                <!--复选框-->
+                <input type="checkbox" name="check[]" value="option1"/>option1
+                <input type="checkbox" name="check[]" value="option2"/>option2
+                <input type="checkbox" name="check[]" value="option3"/>option3
+                
+                <input type="submit" value="submit"/>
+                <input type="reset" value="reset"/>
+                <input type="button" value="button" onclick="getValue()"/>
+                
+            </form>
+			<input type="text" id="order" size="50">
+        </body>
+</html>
+
+
+
+
